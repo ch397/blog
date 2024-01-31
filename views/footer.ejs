@@ -1,0 +1,11 @@
+<footer>
+  <ul>
+    <li><a href="/profile">プロフィール</a></li>
+    <li><a href="/inquiry">コンタクト</a></li>
+    <% if(locals.isLoggedIn) { %>
+      <li><a href="/logout">管理者ログアウト</a></li>
+    <% } else { %>
+      <li><a href="/login">管理者ログイン</a></li>
+    <% } %>
+  </ul>
+</footer>

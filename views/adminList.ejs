@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class = "header-nav">
+          
+          <p>ようこそ、<%= locals.username %>さん</p>
+          <ul>
+              <li><a href="/adminList">管理者記事一覧</a></li>
+              <% if(locals.isLoggedIn) { %>
+              <li><a href="/logout">管理者ログアウト</a></LI>
+              <% } else{ %>
+              <li><a href="/login">管理者ログイン</a></li>
+              <% } %>
+          </ul>
+      </div>
+
+  </header>
+    <main>
+    <h1>これは管理者ページです。</h1>
+      <ul class="list">
+        <a href="/new" class="new-button">+ 新規作成</a>
+        <% articles.forEach((article) => { %>
+          <li>
+            <h2><%= article.title %></h2>
+            <p><%= article.summary %></p>
+            <p><%= article.content %></p>
+            <div class = "item-menu">
+              <form action="/delete/<%= article.id %>" method="post" >
+                <input type = "submit" value = "削除">
+              </form>
+              <a href="/edit/<%= article.id %>">編集する</a>
+            </div>
+          </li>
+        <% }) %>
+      </ul>
+    </main>
+  </body>
+</html>

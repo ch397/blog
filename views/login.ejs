@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>BLOG</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <div class="sign">
+      <div class="container">
+        <h1><a href="/list">BLOG</a></h1>
+        <div class="panel">
+          <h2>管理者ログイン</h2>
+          <!-- ここに適切なURLとメソッドを設定します -->
+          <form action="/login" method="post"> 
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email">
+            <label for="password">パスワード</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="ログイン">
+            <a href="/list">一覧にもどる</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
